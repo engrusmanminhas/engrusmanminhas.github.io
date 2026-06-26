@@ -8,8 +8,35 @@
   <meta name="keywords" content="Planning Engineer Bahrain, Primavera P6, EVM, EOT Claims, BAPCO, GCC Planning Engineer, PMP, Project Controls, Forensic Delay Analysis">
   <meta property="og:title" content="Muhammad Usman Tufail — Lead Planning & Control Engineer">
   <meta property="og:description" content="7+ years delivering EPC, oil & gas, and infrastructure projects across Bahrain and Pakistan.">
-  <meta property="og:image" content="profile.jpg">
-  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://planandcontrol.com/profile.jpg">
+  <meta property="og:url" content="https://planandcontrol.com/">
+  <meta property="og:type" content="profile">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Muhammad Usman Tufail — Lead Planning & Control Engineer | PMP®">
+  <meta name="twitter:description" content="Project planning, scheduling, controls & delay analysis for EPC, infrastructure & oil & gas projects across the GCC.">
+  <meta name="twitter:image" content="https://planandcontrol.com/profile.jpg">
+  <meta name="author" content="Muhammad Usman Tufail">
+  <meta name="theme-color" content="#03090f">
+  <link rel="canonical" href="https://planandcontrol.com/">
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Usman Tufail",
+    "url": "https://planandcontrol.com/",
+    "image": "https://planandcontrol.com/profile.jpg",
+    "jobTitle": "Lead Planning & Control Engineer",
+    "email": "mailto:usman@planandcontrol.com",
+    "telephone": "+973-3354-8603",
+    "address": { "@type": "PostalAddress", "addressLocality": "Manama", "addressCountry": "BH" },
+    "sameAs": ["https://linkedin.com/in/engrusmanminhas"],
+    "worksFor": { "@type": "Organization", "name": "MCSC Bahrain" },
+    "hasCredential": ["PMP® — PMI", "CRPEP Registered Engineer — Bahrain", "PEC Registered — Pakistan"],
+    "knowsAbout": ["Primavera P6", "Earned Value Management", "Forensic Delay Analysis", "Extension of Time Claims", "Project Controls", "Power BI", "EPC Project Planning"]
+  }
+  </script>
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -124,6 +151,23 @@
     }
     .nav-links a:hover { color: var(--white); }
     .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--white); }
+    .nav-links a.active::after { width: 100%; }
+
+    /* ---- Back to top ---- */
+    .to-top {
+      position: fixed; bottom: 30px; right: 30px; z-index: 120;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(3,9,15,0.72); backdrop-filter: blur(12px);
+      border: 1px solid rgba(201,169,97,0.35); color: var(--gold);
+      font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      opacity: 0; visibility: hidden; transform: translateY(12px);
+      transition: opacity .4s ease, visibility .4s ease, transform .4s ease, border-color .3s, background .3s;
+    }
+    .to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .to-top:hover { border-color: var(--gold); background: rgba(201,169,97,0.1); }
+    body.has-cursor .to-top { cursor: none; }
+    @media (max-width: 768px) { .to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; } }
 
     .nav-toggle { display: none; background: none; border: none; color: var(--white); font-size: 20px; cursor: pointer; }
 
@@ -340,6 +384,7 @@
   <div class="progress" id="progress"></div>
   <div class="cursor-dot" id="cDot"></div>
   <div class="cursor-ring" id="cRing"></div>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
@@ -412,7 +457,7 @@
   <section id="about">
     <p class="eyebrow reveal">About</p>
     <div class="about-grid">
-      <div class="about-img reveal-l"><img src="profile.jpg" alt="Muhammad Usman Tufail, Lead Planning & Control Engineer"></div>
+      <div class="about-img reveal-l"><img src="profile.jpg" alt="Muhammad Usman Tufail, Lead Planning & Control Engineer" width="600" height="800" loading="lazy" decoding="async"></div>
       <div class="about-text reveal-r">
         <h2 class="title">Precision on the<br>world's toughest <em>projects</em></h2>
         <p>Results-driven Lead Planning &amp; Control Engineer with <strong>7+ years</strong> delivering EPC, oil &amp; gas refinery, and infrastructure projects across Bahrain and Pakistan.</p>
@@ -636,6 +681,14 @@
     var nav = document.getElementById('nav');
     var progress = document.getElementById('progress');
     var heroInner = document.getElementById('heroInner');
+    var toTop = document.getElementById('toTop');
+
+    /* Scrollspy: map in-page nav links to their sections */
+    var spyLinks = [].slice.call(document.querySelectorAll('.nav-links a')).filter(function (a) {
+      return (a.getAttribute('href') || '').charAt(0) === '#';
+    });
+    var spySections = spyLinks.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+
     function onScroll() {
       var y = window.scrollY || window.pageYOffset;
       nav.classList.toggle('scrolled', y > 40);
@@ -645,9 +698,21 @@
         heroInner.style.transform = 'translateY(' + (y * 0.28) + 'px)';
         heroInner.style.opacity = Math.max(0, 1 - y / (window.innerHeight * 0.72));
       }
+      if (toTop) toTop.classList.toggle('show', y > window.innerHeight * 0.6);
+
+      /* highlight the section currently in view */
+      var mark = y + window.innerHeight * 0.35, current = -1;
+      for (var i = 0; i < spySections.length; i++) {
+        if (spySections[i] && spySections[i].offsetTop <= mark) current = i;
+      }
+      spyLinks.forEach(function (a, i) { a.classList.toggle('active', i === current); });
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    if (toTop) toTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
 
     /* ---- Mobile menu ---- */
     var mm = document.getElementById('mobileMenu');
