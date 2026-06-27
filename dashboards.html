@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboards &amp; Controls | Muhammad Usman Tufail — Project Controls</title>
+  <meta name="description" content="Sample project-control dashboards: Budget vs Actual, DPR/WPR progress, manpower histogram, procurement tracker, delay &amp; constraint log, and full EVM (SPI/CPI + S-curve). Built with anonymized data.">
+  <link rel="canonical" href="https://planandcontrol.com/dashboards.html">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="progress" id="progress"></div>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mClose" aria-label="Close menu">✕</button>
+    <a href="index.html#about">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="dashboards.html">Dashboards</a>
+    <a href="ai-workflows.html">AI Workflows</a>
+    <a href="resources.html">Templates</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Plan<span>&amp;</span>Control</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="dashboards.html" class="active">Dashboards</a></li>
+        <li><a href="ai-workflows.html">AI Workflows</a></li>
+        <li><a href="resources.html">Templates</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
+
+  <main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Dashboards</p>
+      <h1>Dashboards &amp; <em>controls</em></h1>
+      <p class="lead">The management views I build for real projects — earned value, progress, cost, manpower and procurement. Samples below are rendered live in the browser using <strong>anonymized project-control data</strong>; on live projects these are delivered in Power BI and Excel.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid" style="gap:32px;">
+
+        <!-- EVM -->
+        <div class="dash reveal">
+          <div class="dash-head">
+            <div><h3>EVM Dashboard</h3><p>PV · EV · AC with SPI / CPI and S-curve</p></div>
+            <span class="sample-note">Sample · anonymized data</span>
+          </div>
+          <div class="dash-body">
+            <div class="kpi-row">
+              <div class="kpi"><div class="k-label">SPI</div><div class="k-val">0.94</div></div>
+              <div class="kpi"><div class="k-label">CPI</div><div class="k-val" style="color:var(--green)">1.02</div></div>
+              <div class="kpi"><div class="k-label">% Complete</div><div class="k-val">68<small>%</small></div></div>
+              <div class="kpi"><div class="k-label">EAC</div><div class="k-val">4.4<small>M</small></div></div>
+            </div>
+            <svg class="chart" viewBox="0 0 640 280" role="img" aria-label="Sample EVM S-curve">
+              <line class="grid-line" x1="48" y1="30"  x2="620" y2="30"/>
+              <line class="grid-line" x1="48" y1="90"  x2="620" y2="90"/>
+              <line class="grid-line" x1="48" y1="150" x2="620" y2="150"/>
+              <line class="grid-line" x1="48" y1="210" x2="620" y2="210"/>
+              <line class="grid-line" x1="48" y1="240" x2="620" y2="240" stroke="#cbd5e1"/>
+              <text class="axis-label" x="40" y="34" text-anchor="end">100%</text>
+              <text class="axis-label" x="40" y="154" text-anchor="end">50%</text>
+              <text class="axis-label" x="40" y="244" text-anchor="end">0%</text>
+              <polyline fill="none" stroke="#2563eb" stroke-width="3" points="48,238 105,228 162,205 219,172 276,135 333,100 390,72 447,52 504,40 561,33 618,30"/>
+              <polyline fill="none" stroke="#16a34a" stroke-width="3" points="48,238 105,231 162,214 219,188 276,158 333,128 390,104 447,86 504,74"/>
+              <polyline fill="none" stroke="#d97706" stroke-width="2.5" stroke-dasharray="6 5" points="48,238 105,230 162,210 219,182 276,150 333,120 390,98 447,82 504,72"/>
+              <circle cx="504" cy="74" r="4" fill="#16a34a"/><circle cx="504" cy="72" r="4" fill="#d97706"/>
+              <text class="axis-label" x="48" y="262">M1</text><text class="axis-label" x="276" y="262">M5</text><text class="axis-label" x="504" y="262">Now</text>
+            </svg>
+            <div class="legend">
+              <span><i style="background:#2563eb"></i> Planned (BCWS)</span>
+              <span><i style="background:#16a34a"></i> Earned (BCWP)</span>
+              <span><i style="background:#d97706"></i> Actual (ACWP)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap:32px;">
+          <!-- Budget vs Actual -->
+          <div class="dash reveal">
+            <div class="dash-head">
+              <div><h3>Budget vs Actual</h3><p>Cost by discipline</p></div>
+              <span class="sample-note">Sample</span>
+            </div>
+            <div class="dash-body">
+              <svg class="chart" viewBox="0 0 480 260" role="img" aria-label="Sample budget vs actual bar chart">
+                <line class="grid-line" x1="40" y1="40"  x2="460" y2="40"/>
+                <line class="grid-line" x1="40" y1="100" x2="460" y2="100"/>
+                <line class="grid-line" x1="40" y1="160" x2="460" y2="160"/>
+                <line class="grid-line" x1="40" y1="210" x2="460" y2="210" stroke="#cbd5e1"/>
+                <rect x="64"  y="60"  width="30" height="150" fill="#2563eb" rx="3"/><rect x="96"  y="84"  width="30" height="126" fill="#93c5fd" rx="3"/>
+                <rect x="176" y="78"  width="30" height="132" fill="#2563eb" rx="3"/><rect x="208" y="110" width="30" height="100" fill="#93c5fd" rx="3"/>
+                <rect x="288" y="112" width="30" height="98"  fill="#2563eb" rx="3"/><rect x="320" y="140" width="30" height="70"  fill="#93c5fd" rx="3"/>
+                <rect x="392" y="142" width="30" height="68"  fill="#2563eb" rx="3"/><rect x="408" y="142" width="0"  height="0"/>
+                <text class="axis-label" x="95"  y="230" text-anchor="middle">Civil</text>
+                <text class="axis-label" x="207" y="230" text-anchor="middle">MEP</text>
+                <text class="axis-label" x="319" y="230" text-anchor="middle">Finish</text>
+                <text class="axis-label" x="407" y="230" text-anchor="middle">Ext.</text>
+              </svg>
+              <div class="legend"><span><i style="background:#2563eb"></i> Budget</span><span><i style="background:#93c5fd"></i> Actual</span></div>
+            </div>
+          </div>
+
+          <!-- DPR/WPR -->
+          <div class="dash reveal">
+            <div class="dash-head">
+              <div><h3>DPR / WPR Progress</h3><p>Daily actual vs weekly plan</p></div>
+              <span class="sample-note">Sample</span>
+            </div>
+            <div class="dash-body">
+              <svg class="chart" viewBox="0 0 480 260" role="img" aria-label="Sample planned vs actual progress">
+                <line class="grid-line" x1="40" y1="40"  x2="460" y2="40"/>
+                <line class="grid-line" x1="40" y1="100" x2="460" y2="100"/>
+                <line class="grid-line" x1="40" y1="160" x2="460" y2="160"/>
+                <line class="grid-line" x1="40" y1="210" x2="460" y2="210" stroke="#cbd5e1"/>
+                <polyline fill="none" stroke="#2563eb" stroke-width="3" points="48,196 108,170 168,148 228,118 288,96 348,72 408,52"/>
+                <polyline fill="none" stroke="#16a34a" stroke-width="3" stroke-dasharray="6 5" points="48,196 108,176 168,158 228,132 288,112 348,92"/>
+                <circle cx="348" cy="92" r="4" fill="#16a34a"/>
+                <text class="axis-label" x="48" y="230">Mon</text><text class="axis-label" x="408" y="230">Sun</text>
+              </svg>
+              <div class="legend"><span><i style="background:#2563eb"></i> Planned</span><span><i style="background:#16a34a"></i> Actual</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manpower histogram -->
+        <div class="dash reveal">
+          <div class="dash-head">
+            <div><h3>Manpower Histogram</h3><p>Resource requirement by discipline, per week</p></div>
+            <span class="sample-note">Sample · anonymized data</span>
+          </div>
+          <div class="dash-body">
+            <svg class="chart" viewBox="0 0 640 260" role="img" aria-label="Sample stacked manpower histogram">
+              <line class="grid-line" x1="40" y1="40"  x2="620" y2="40"/>
+              <line class="grid-line" x1="40" y1="100" x2="620" y2="100"/>
+              <line class="grid-line" x1="40" y1="160" x2="620" y2="160"/>
+              <line class="grid-line" x1="40" y1="210" x2="620" y2="210" stroke="#cbd5e1"/>
+              <rect x="60"  y="150" width="44" height="60" fill="#1d4ed8" rx="2"/><rect x="60"  y="124" width="44" height="26" fill="#2563eb"/><rect x="60"  y="110" width="44" height="14" fill="#93c5fd"/>
+              <rect x="128" y="128" width="44" height="82" fill="#1d4ed8" rx="2"/><rect x="128" y="98"  width="44" height="30" fill="#2563eb"/><rect x="128" y="82"  width="44" height="16" fill="#93c5fd"/>
+              <rect x="196" y="108" width="44" height="102" fill="#1d4ed8" rx="2"/><rect x="196" y="76"  width="44" height="32" fill="#2563eb"/><rect x="196" y="58"  width="44" height="18" fill="#93c5fd"/>
+              <rect x="264" y="100" width="44" height="110" fill="#1d4ed8" rx="2"/><rect x="264" y="66"  width="44" height="34" fill="#2563eb"/><rect x="264" y="48"  width="44" height="18" fill="#93c5fd"/>
+              <rect x="332" y="112" width="44" height="98" fill="#1d4ed8" rx="2"/><rect x="332" y="80"  width="44" height="32" fill="#2563eb"/><rect x="332" y="64"  width="44" height="16" fill="#93c5fd"/>
+              <rect x="400" y="132" width="44" height="78" fill="#1d4ed8" rx="2"/><rect x="400" y="104" width="44" height="28" fill="#2563eb"/><rect x="400" y="90"  width="44" height="14" fill="#93c5fd"/>
+              <rect x="468" y="152" width="44" height="58" fill="#1d4ed8" rx="2"/><rect x="468" y="128" width="44" height="24" fill="#2563eb"/><rect x="468" y="116" width="44" height="12" fill="#93c5fd"/>
+              <rect x="536" y="170" width="44" height="40" fill="#1d4ed8" rx="2"/><rect x="536" y="150" width="44" height="20" fill="#2563eb"/><rect x="536" y="140" width="44" height="10" fill="#93c5fd"/>
+              <text class="axis-label" x="82"  y="230" text-anchor="middle">W1</text>
+              <text class="axis-label" x="286" y="230" text-anchor="middle">W4</text>
+              <text class="axis-label" x="558" y="230" text-anchor="middle">W8</text>
+            </svg>
+            <div class="legend"><span><i style="background:#1d4ed8"></i> Civil</span><span><i style="background:#2563eb"></i> MEP</span><span><i style="background:#93c5fd"></i> Finishes</span></div>
+          </div>
+        </div>
+
+        <!-- Procurement tracker -->
+        <div class="dash reveal">
+          <div class="dash-head">
+            <div><h3>Procurement Tracker</h3><p>PO · GRN · delivery · pending material</p></div>
+            <span class="sample-note">Sample · anonymized data</span>
+          </div>
+          <div class="dash-body" style="padding:0;">
+            <div class="table-wrap" style="border:none; border-radius:0;">
+              <table class="data">
+                <thead><tr><th>PO No.</th><th>Material</th><th>Qty</th><th>GRN</th><th>Delivery</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>PO-1042</td><td>Reinforcement steel</td><td>120 t</td><td>Received</td><td>Wk 12</td><td><span class="pill ok">Delivered</span></td></tr>
+                  <tr><td>PO-1051</td><td>LV switchgear</td><td>4 set</td><td>Partial</td><td>Wk 16</td><td><span class="pill warn">In transit</span></td></tr>
+                  <tr><td>PO-1063</td><td>HVAC AHUs</td><td>6 no.</td><td>—</td><td>Wk 19</td><td><span class="pill info">Ordered</span></td></tr>
+                  <tr><td>PO-1078</td><td>Fire-rated doors</td><td>38 no.</td><td>—</td><td>Wk 21</td><td><span class="pill bad">Pending</span></td></tr>
+                  <tr><td>PO-1090</td><td>Cable trays</td><td>900 m</td><td>Received</td><td>Wk 13</td><td><span class="pill ok">Delivered</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delay & constraint log -->
+        <div class="dash reveal">
+          <div class="dash-head">
+            <div><h3>Delay &amp; Constraint Log</h3><p>Client · design · material · permit · manpower</p></div>
+            <span class="sample-note">Sample · anonymized data</span>
+          </div>
+          <div class="dash-body" style="padding:0;">
+            <div class="table-wrap" style="border:none; border-radius:0;">
+              <table class="data">
+                <thead><tr><th>Ref</th><th>Constraint</th><th>Category</th><th>Impact</th><th>Status</th></tr></thead>
+                <tbody>
+                  <tr><td>C-01</td><td>Permit-to-work window limited</td><td>Permit</td><td>Critical</td><td><span class="pill bad">Open</span></td></tr>
+                  <tr><td>C-02</td><td>IFC drawings awaited</td><td>Design</td><td>High</td><td><span class="pill warn">Mitigating</span></td></tr>
+                  <tr><td>C-03</td><td>Switchgear delivery slip</td><td>Material</td><td>High</td><td><span class="pill warn">Mitigating</span></td></tr>
+                  <tr><td>C-04</td><td>Skilled-labour shortfall</td><td>Manpower</td><td>Medium</td><td><span class="pill info">Monitoring</span></td></tr>
+                  <tr><td>C-05</td><td>Client decision on layout</td><td>Client</td><td>Medium</td><td><span class="pill ok">Closed</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cta-banner reveal" style="margin-top:60px;">
+        <h2>Want these dashboards on your project?</h2>
+        <p>I build EVM, cost, progress and procurement dashboards in Power BI and Excel — wired to your P6 and ERP data.</p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <a href="index.html#contact" class="btn-primary">Get in touch</a>
+          <a href="resources.html" class="btn-ghost">Download templates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Plan<span>&amp;</span>Control</a>
+          <p>Project controls, dashboards, delay analysis and AI workflows for EPC, oil &amp; gas and infrastructure projects across the GCC.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="projects.html">Projects</a>
+          <a href="dashboards.html">Dashboards</a>
+          <a href="ai-workflows.html">AI Workflows</a>
+          <a href="resources.html">Templates</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:usman@planandcontrol.com">Email</a>
+          <a href="tel:+97333548603">+973 3354 8603</a>
+          <a href="https://linkedin.com/in/engrusmanminhas" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="Muhammad_Usman_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Muhammad Usman Tufail · planandcontrol.com</p>
+        <div class="f-social">
+          <a href="https://linkedin.com/in/engrusmanminhas" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:usman@planandcontrol.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
