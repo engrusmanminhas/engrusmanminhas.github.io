@@ -3,397 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Muhammad Usman Tufail | Planning &amp; Project Controls Insights</title>
-  <meta name="description" content="Practical articles on Primavera P6, EVM, EOT claims, forensic delay analysis, and project controls for the GCC oil &amp; gas and EPC industry.">
- 
-  <link rel="stylesheet" href="style.css">
+  <title>Blog &amp; Insights | Muhammad Usman Tufail — Planning &amp; Project Controls</title>
+  <meta name="description" content="Practical articles on Primavera P6, EVM, EOT claims, forensic delay analysis and project controls for the GCC oil &amp; gas and EPC industry.">
+  <link rel="canonical" href="https://planandcontrol.com/blog.html">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
- 
-  <style>
-    /* ===== BLOG PAGE STYLES ===== */
-    .page-hero {
-      background: linear-gradient(135deg, #061a30 0%, #0a2540 100%);
-      color: white;
-      padding: 160px 24px 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 50%; height: 100%;
-      background: radial-gradient(circle at top right, rgba(201, 169, 97, 0.15), transparent 60%);
-    }
-    .page-hero-content {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .page-hero .eyebrow {
-      color: #c9a961;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .page-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 5vw, 56px);
-      color: white;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-    .page-hero p {
-      font-size: 19px;
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 640px;
-      margin: 0 auto;
-    }
- 
-    /* Blog grid */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 32px;
-      margin-top: 20px;
-    }
- 
-    .blog-card {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(10, 37, 64, 0.08);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      border-top: 4px solid #c9a961;
-    }
- 
-    .blog-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(10, 37, 64, 0.15);
-    }
- 
-    .blog-card-image {
-      height: 180px;
-      background: linear-gradient(135deg, #0a2540 0%, #163b66 100%);
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
- 
-    .blog-card-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(201, 169, 97, 0.25), transparent 70%);
-    }
- 
-    .blog-card-icon {
-      font-size: 64px;
-      position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-    }
- 
-    .blog-card-body {
-      padding: 28px 26px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
- 
-    .blog-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 14px;
-      font-size: 12px;
-      color: #5a6478;
-    }
- 
-    .blog-category {
-      background: #f7f9fc;
-      color: #0a2540;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      font-size: 11px;
-      border: 1px solid #e5e9f0;
-    }
- 
-    .blog-date {
-      letter-spacing: 0.5px;
-    }
- 
-    .blog-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: #0a2540;
-      margin-bottom: 12px;
-      line-height: 1.3;
-    }
- 
-    .blog-card p {
-      color: #5a6478;
-      font-size: 14.5px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      flex: 1;
-    }
- 
-    .blog-read-more {
-      color: #a88a45;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.3s ease;
-    }
- 
-    .blog-read-more:hover {
-      gap: 12px;
-      color: #c9a961;
-    }
- 
-    /* Newsletter subscribe */
-    .newsletter-cta {
-      background: linear-gradient(135deg, #0a2540 0%, #163b66 100%);
-      color: white;
-      padding: 60px 40px;
-      border-radius: 12px;
-      text-align: center;
-      margin: 80px 0 40px;
-      border: 1px solid rgba(201, 169, 97, 0.3);
-    }
- 
-    .newsletter-cta h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: white;
-      margin-bottom: 14px;
-    }
- 
-    .newsletter-cta p {
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 540px;
-      margin: 0 auto 28px;
-      font-size: 16px;
-    }
- 
-    .newsletter-form {
-      display: flex;
-      gap: 12px;
-      max-width: 500px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
- 
-    .newsletter-form input {
-      flex: 1;
-      min-width: 200px;
-      padding: 14px 18px;
-      border: none;
-      border-radius: 4px;
-      font-size: 15px;
-      font-family: inherit;
-    }
- 
-    .newsletter-form button {
-      padding: 14px 28px;
-      background: #c9a961;
-      color: #0a2540;
-      border: none;
-      border-radius: 4px;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 15px;
-      transition: all 0.3s ease;
-    }
- 
-    .newsletter-form button:hover {
-      background: #e0c585;
-      transform: translateY(-2px);
-    }
- 
-    .coming-soon-note {
-      background: rgba(201, 169, 97, 0.1);
-      border: 1px solid rgba(201, 169, 97, 0.3);
-      border-radius: 8px;
-      padding: 20px 28px;
-      margin: 40px 0;
-      text-align: center;
-      color: #5a6478;
-    }
- 
-    .coming-soon-note strong {
-      color: #0a2540;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-  <!-- ========== NAVIGATION ========== -->
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="progress" id="progress"></div>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mClose" aria-label="Close menu">✕</button>
+    <a href="index.html#about">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="dashboards.html">Dashboards</a>
+    <a href="ai-workflows.html">AI Workflows</a>
+    <a href="resources.html">Templates</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+
   <nav id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">MUT<span>.</span></a>
+      <a href="index.html" class="nav-logo">Plan<span>&amp;</span>Control</a>
       <ul class="nav-links">
         <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="blog.html" style="color:#c9a961;">Blog</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="dashboards.html">Dashboards</a></li>
+        <li><a href="ai-workflows.html">AI Workflows</a></li>
+        <li><a href="resources.html">Templates</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
     </div>
   </nav>
- 
-  <!-- ========== PAGE HERO ========== -->
+
+  <main id="main">
   <section class="page-hero">
-    <div class="page-hero-content">
-      <p class="eyebrow">Insights &amp; Articles</p>
-      <h1>Planning &amp; Project Controls Blog</h1>
-      <p>Practical articles on Primavera P6, EVM, EOT claims, forensic delay analysis, and lessons learned from real EPC and oil &amp; gas projects across the GCC.</p>
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Blog</p>
+      <h1>Insights &amp; <em>articles</em></h1>
+      <p class="lead">Practical articles on Primavera P6, EVM, EOT claims, forensic delay analysis and lessons from real EPC and oil &amp; gas projects across the GCC.</p>
     </div>
   </section>
- 
-  <!-- ========== BLOG GRID ========== -->
-  <section class="section">
+
+  <section>
     <div class="container">
- 
-      <div class="coming-soon-note">
-        📝 <strong>New articles published monthly.</strong> Subscribe below to get them delivered directly to your inbox.
+      <div class="card reveal" style="background:var(--bg-alt); border-style:dashed; text-align:center; margin-bottom:36px;">
+        <p style="margin:0; color:var(--muted);">📝 <strong style="color:var(--ink);">New articles published monthly.</strong> Subscribe below to get them in your inbox.</p>
       </div>
- 
-      <div class="blog-grid">
- 
-        <article class="blog-card">
-          <div class="blog-card-image">
-            <span class="blog-card-icon">📊</span>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-category">Primavera P6</span>
-              <span class="blog-date">Coming Soon</span>
-            </div>
-            <h3>Building a Bulletproof Baseline Schedule in Primavera P6</h3>
-            <p>A practical step-by-step guide to building defensible baselines that survive contract scrutiny — covering WBS structure, activity logic, constraint discipline, and the most common mistakes that destroy schedule credibility.</p>
-            <a href="#" class="blog-read-more">Read article →</a>
-          </div>
+
+      <div class="grid grid-3">
+
+        <article class="card reveal">
+          <span class="meta">Primavera P6 · Soon</span>
+          <h3>Building a Bulletproof Baseline in P6</h3>
+          <p>A step-by-step guide to defensible baselines that survive contract scrutiny — WBS structure, activity logic, constraint discipline, and the mistakes that destroy schedule credibility.</p>
+          <span class="card-link">Read article →</span>
         </article>
- 
-        <article class="blog-card">
-          <div class="blog-card-image">
-            <span class="blog-card-icon">⚖️</span>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-category">EOT Claims</span>
-              <span class="blog-date">Coming Soon</span>
-            </div>
-            <h3>EOT Claims That Actually Win: SCL Protocol in Practice</h3>
-            <p>How to build an Extension of Time claim that survives forensic review — covering Time Impact Analysis (TIA), contemporaneous records, the Society of Construction Law Protocol, and what GCC engineers consistently get wrong.</p>
-            <a href="#" class="blog-read-more">Read article →</a>
-          </div>
+
+        <article class="card reveal">
+          <span class="meta">EOT Claims · Soon</span>
+          <h3>EOT Claims That Actually Win</h3>
+          <p>How to build an Extension of Time claim that survives forensic review — Time Impact Analysis, contemporaneous records, the SCL Protocol, and what GCC engineers get wrong.</p>
+          <span class="card-link">Read article →</span>
         </article>
- 
-        <article class="blog-card">
-          <div class="blog-card-image">
-            <span class="blog-card-icon">📈</span>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-category">EVM</span>
-              <span class="blog-date">Coming Soon</span>
-            </div>
-            <h3>EVM for Refinery Projects: From Theory to Power BI Dashboard</h3>
-            <p>Real lessons applying Earned Value Management on a live BAPCO Energies refinery project — BCWP / BCWS / ACWP setup, weekly reporting cadence, and how to turn EVM data into an executive-ready Power BI dashboard.</p>
-            <a href="#" class="blog-read-more">Read article →</a>
-          </div>
+
+        <article class="card reveal">
+          <span class="meta">EVM · Soon</span>
+          <h3>EVM for Refinery Projects → Power BI</h3>
+          <p>Real lessons applying Earned Value Management on a live refinery project — BCWP/BCWS/ACWP setup, reporting cadence, and turning EVM data into an executive Power BI dashboard.</p>
+          <span class="card-link">Read article →</span>
         </article>
- 
-        <article class="blog-card">
-          <div class="blog-card-image">
-            <span class="blog-card-icon">🛢️</span>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-category">Oil &amp; Gas</span>
-              <span class="blog-date">Coming Soon</span>
-            </div>
-            <h3>Planning Inside a Live Refinery: PTW, H₂S &amp; Schedule Reality</h3>
-            <p>What the textbooks don't tell you about scheduling work inside an operating refinery — Permit to Work cycles, H₂S exposure constraints, shutdown windows, and how to build realistic activity durations that survive site conditions.</p>
-            <a href="#" class="blog-read-more">Read article →</a>
-          </div>
+
+        <article class="card reveal">
+          <span class="meta">Oil &amp; Gas · Soon</span>
+          <h3>Planning Inside a Live Refinery</h3>
+          <p>What the textbooks don't tell you about scheduling in an operating refinery — PTW cycles, H₂S constraints, shutdown windows, and durations that survive site reality.</p>
+          <span class="card-link">Read article →</span>
         </article>
- 
-        <article class="blog-card">
-          <div class="blog-card-image">
-            <span class="blog-card-icon">🌍</span>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-category">Career</span>
-              <span class="blog-date">Coming Soon</span>
-            </div>
-            <h3>Breaking Into the GCC as a Planning Engineer: A Practical Guide</h3>
-            <p>The honest playbook for landing your first GCC planning role — credentials that matter (PMP, CRPEP, P6), how to position your CV, which recruiters actually respond, and the visa realities nobody warns you about.</p>
-            <a href="#" class="blog-read-more">Read article →</a>
-          </div>
+
+        <article class="card reveal">
+          <span class="meta">AI · Soon</span>
+          <h3>AI Workflows for Planning Engineers</h3>
+          <p>How I use AI to generate DPRs, audit P6 schedules and clean cost workbooks — what works, what doesn't, and where a human must stay in the loop.</p>
+          <span class="card-link">Read article →</span>
         </article>
- 
-        <article class="blog-card">
-          <div class="blog-card-image">
-            <span class="blog-card-icon">🔍</span>
-          </div>
-          <div class="blog-card-body">
-            <div class="blog-meta">
-              <span class="blog-category">Delay Analysis</span>
-              <span class="blog-date">Coming Soon</span>
-            </div>
-            <h3>Forensic Delay Analysis Techniques: TIA vs. Windows vs. Collapsed As-Built</h3>
-            <p>A clear comparison of the four major forensic delay analysis methodologies — when to use each, what data they require, how courts and arbitrators view them, and which one fits your project's contract regime.</p>
-            <a href="#" class="blog-read-more">Read article →</a>
-          </div>
+
+        <article class="card reveal">
+          <span class="meta">Delay Analysis · Soon</span>
+          <h3>TIA vs Windows vs Collapsed As-Built</h3>
+          <p>A clear comparison of the major forensic delay-analysis methods — when to use each, what data they need, and how arbitrators view them.</p>
+          <span class="card-link">Read article →</span>
         </article>
- 
+
       </div>
- 
-      <!-- ========== NEWSLETTER ========== -->
-      <div class="newsletter-cta">
-        <h3>Get Practical Planning Insights, Monthly</h3>
-        <p>Join GCC planning engineers receiving real-project lessons on Primavera P6, EVM, and EOT claims. No spam — just practical content you can use Monday morning.</p>
-        <form class="newsletter-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <div class="cta-banner reveal" style="margin-top:56px;">
+        <h2>Get practical planning insights, monthly</h2>
+        <p>Join GCC planning engineers receiving real-project lessons on P6, EVM and EOT claims. No spam — just content you can use Monday morning.</p>
+        <form class="capture" data-ajax action="https://formspree.io/f/mqejrgpv" method="POST">
           <input type="email" name="email" placeholder="your@email.com" required>
-          <button type="submit">Subscribe</button>
+          <input type="hidden" name="source" value="Blog - Newsletter">
+          <button type="submit" class="btn-primary">Subscribe</button>
+          <p class="form-note" style="flex-basis:100%; text-align:center; color:#fff;"></p>
         </form>
       </div>
- 
     </div>
   </section>
- 
-  <!-- ========== FOOTER ========== -->
+  </main>
+
   <footer>
-    <div class="container footer-content">
-      <p>&copy; <span id="year"></span> Muhammad Usman Tufail. All rights reserved.</p>
-      <p class="footer-tagline">Lead Planning &amp; Control Engineer | PMP® | CRPEP Bahrain</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Plan<span>&amp;</span>Control</a>
+          <p>Project controls, dashboards, delay analysis and AI workflows for EPC, oil &amp; gas and infrastructure projects across the GCC.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="projects.html">Projects</a>
+          <a href="dashboards.html">Dashboards</a>
+          <a href="ai-workflows.html">AI Workflows</a>
+          <a href="resources.html">Templates</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:usman@planandcontrol.com">Email</a>
+          <a href="tel:+97333548603">+973 3354 8603</a>
+          <a href="https://linkedin.com/in/engrusmanminhas" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="Muhammad_Usman_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Muhammad Usman Tufail · planandcontrol.com</p>
+        <div class="f-social">
+          <a href="https://linkedin.com/in/engrusmanminhas" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:usman@planandcontrol.com">Email</a>
+        </div>
+      </div>
     </div>
   </footer>
- 
+
   <script src="script.js"></script>
 </body>
 </html>

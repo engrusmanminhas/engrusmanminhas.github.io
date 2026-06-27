@@ -3,448 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources | Muhammad Usman Tufail | Free Planning &amp; Project Controls Templates</title>
-  <meta name="description" content="Free downloadable templates and curated external tools for planning engineers — Primavera P6 templates, EVM dashboards, EOT claim templates, and project controls resources.">
- 
-  <link rel="stylesheet" href="style.css">
+  <title>Templates &amp; Resources | Muhammad Usman Tufail — Project Controls</title>
+  <meta name="description" content="Free project-controls templates and curated tools for planning engineers: EVM dashboard, EOT claim template, WPR/DPR packs, delay log, manhour tracker, procurement tracker and more.">
+  <link rel="canonical" href="https://planandcontrol.com/resources.html">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
- 
-  <style>
-    /* ===== RESOURCES PAGE ===== */
-    .page-hero {
-      background: linear-gradient(135deg, #061a30 0%, #0a2540 100%);
-      color: white;
-      padding: 160px 24px 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 50%; height: 100%;
-      background: radial-gradient(circle at top right, rgba(201, 169, 97, 0.15), transparent 60%);
-    }
-    .page-hero-content {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .page-hero .eyebrow {
-      color: #c9a961;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .page-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 5vw, 56px);
-      color: white;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-    .page-hero p {
-      font-size: 19px;
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 640px;
-      margin: 0 auto;
-    }
- 
-    .resource-section {
-      margin-bottom: 80px;
-    }
- 
-    .resource-section-header {
-      margin-bottom: 36px;
-      padding-bottom: 16px;
-      border-bottom: 2px solid #c9a961;
-    }
- 
-    .resource-section-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      color: #0a2540;
-      margin-bottom: 8px;
-    }
- 
-    .resource-section-header p {
-      color: #5a6478;
-      font-size: 15px;
-      max-width: 720px;
-    }
- 
-    /* Download cards */
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-    }
- 
-    .resource-card {
-      background: white;
-      border-radius: 8px;
-      padding: 32px 28px;
-      box-shadow: 0 4px 20px rgba(10, 37, 64, 0.08);
-      transition: all 0.3s ease;
-      border-left: 4px solid #c9a961;
-      display: flex;
-      flex-direction: column;
-    }
- 
-    .resource-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(10, 37, 64, 0.15);
-    }
- 
-    .resource-card-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
- 
-    .resource-icon {
-      width: 52px;
-      height: 52px;
-      background: linear-gradient(135deg, #0a2540 0%, #163b66 100%);
-      color: #c9a961;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      flex-shrink: 0;
-    }
- 
-    .resource-card-title h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 19px;
-      color: #0a2540;
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
- 
-    .resource-type {
-      font-size: 11px;
-      color: #a88a45;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
- 
-    .resource-card p {
-      color: #5a6478;
-      font-size: 14.5px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      flex: 1;
-    }
- 
-    .resource-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #0a2540;
-      color: #c9a961;
-      padding: 11px 22px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid #0a2540;
-      width: fit-content;
-    }
- 
-    .resource-cta:hover {
-      background: #c9a961;
-      color: #0a2540;
-      border-color: #c9a961;
-      transform: translateY(-2px);
-    }
- 
-    .resource-cta.external {
-      background: transparent;
-      color: #0a2540;
-      border: 1px solid #0a2540;
-    }
- 
-    .resource-cta.external:hover {
-      background: #0a2540;
-      color: #c9a961;
-    }
- 
-    .badge-soon {
-      display: inline-block;
-      background: rgba(201, 169, 97, 0.15);
-      color: #a88a45;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-left: auto;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-  <!-- ========== NAVIGATION ========== -->
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="progress" id="progress"></div>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mClose" aria-label="Close menu">✕</button>
+    <a href="index.html#about">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="dashboards.html">Dashboards</a>
+    <a href="ai-workflows.html">AI Workflows</a>
+    <a href="resources.html">Templates</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+
   <nav id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">MUT<span>.</span></a>
+      <a href="index.html" class="nav-logo">Plan<span>&amp;</span>Control</a>
       <ul class="nav-links">
         <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="dashboards.html">Dashboards</a></li>
+        <li><a href="ai-workflows.html">AI Workflows</a></li>
+        <li><a href="resources.html" class="active">Templates</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="resources.html" style="color:#c9a961;">Resources</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
     </div>
   </nav>
- 
-  <!-- ========== PAGE HERO ========== -->
+
+  <main id="main">
   <section class="page-hero">
-    <div class="page-hero-content">
-      <p class="eyebrow">Free Tools &amp; Templates</p>
-      <h1>Resources for Planning Engineers</h1>
-      <p>Hand-picked templates, dashboards, and external tools to help you plan smarter, claim better, and report faster on EPC and oil &amp; gas projects.</p>
-    </div>
-  </section>
- 
-  <!-- ========== FREE DOWNLOADS ========== -->
-  <section class="section">
     <div class="container">
- 
-      <div class="resource-section">
-        <div class="resource-section-header">
-          <h2>📥 Free Downloads</h2>
-          <p>Battle-tested templates and dashboards I've built and refined on real GCC projects — yours free to use.</p>
-        </div>
- 
-        <div class="resources-grid">
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">📊</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Excel Template</span>
-                <h3>EVM Dashboard Template</h3>
-              </div>
-              <span class="badge-soon">Soon</span>
-            </div>
-            <p>Complete Earned Value Management dashboard with auto-calculating SPI, CPI, EAC, ETC, VAC. Plug in BCWP/BCWS/ACWP weekly and the entire dashboard updates including S-curves and trend charts.</p>
-            <a href="#" class="resource-cta">📥 Download (Coming Soon)</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">📝</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Word Template</span>
-                <h3>EOT Claim Template (SCL Aligned)</h3>
-              </div>
-              <span class="badge-soon">Soon</span>
-            </div>
-            <p>Structured Extension of Time claim template following SCL Protocol. Includes sections for delay event narrative, contemporaneous records, Time Impact Analysis, entitlement justification, and quantum.</p>
-            <a href="#" class="resource-cta">📥 Download (Coming Soon)</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">📅</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Excel Tool</span>
-                <h3>Weekly Progress Report Pack</h3>
-              </div>
-              <span class="badge-soon">Soon</span>
-            </div>
-            <p>Executive-ready weekly progress report covering planned vs. actual, SPI/CPI snapshot, critical path status, delays log, risks, and 2-week look-ahead. Designed for PMC and client submittals.</p>
-            <a href="#" class="resource-cta">📥 Download (Coming Soon)</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">⚠️</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Excel Template</span>
-                <h3>Delay Log &amp; Risk Register</h3>
-              </div>
-              <span class="badge-soon">Soon</span>
-            </div>
-            <p>Combined delay event log and risk register aligned with AACE RP-68R-11. Track delay events with contractual reference, severity, mitigation, owner, and entitlement status — all in one place.</p>
-            <a href="#" class="resource-cta">📥 Download (Coming Soon)</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">🏗️</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Excel Template</span>
-                <h3>Man-Hour Tracker</h3>
-              </div>
-              <span class="badge-soon">Soon</span>
-            </div>
-            <p>Activity-code-based man-hour tracking template with planned vs. actual comparison, productivity index, and overrun analysis. Ideal for EPC and refinery projects with multiple disciplines.</p>
-            <a href="#" class="resource-cta">📥 Download (Coming Soon)</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">📋</div>
-              <div class="resource-card-title">
-                <span class="resource-type">PDF Cheat Sheet</span>
-                <h3>Primavera P6 Quick Reference</h3>
-              </div>
-              <span class="badge-soon">Soon</span>
-            </div>
-            <p>One-page reference card covering essential P6 shortcuts, constraint types, calendar best practices, and the most useful global change formulas. Print it, pin it, save hours.</p>
-            <a href="#" class="resource-cta">📥 Download (Coming Soon)</a>
-          </div>
- 
-        </div>
-      </div>
- 
-      <!-- ========== EXTERNAL TOOLS ========== -->
-      <div class="resource-section">
-        <div class="resource-section-header">
-          <h2>🔗 Recommended External Tools</h2>
-          <p>Curated tools, learning resources, and references I personally use and recommend to planning engineers.</p>
-        </div>
- 
-        <div class="resources-grid">
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">🎓</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Standards</span>
-                <h3>PMI — Project Management Institute</h3>
-              </div>
-            </div>
-            <p>The global standard for project management. Home of PMBOK Guide, PMP® certification, and project management research. Essential reference for every planning professional.</p>
-            <a href="https://www.pmi.org" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit pmi.org</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">⚖️</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Standards</span>
-                <h3>SCL Delay &amp; Disruption Protocol</h3>
-              </div>
-            </div>
-            <p>The Society of Construction Law's authoritative protocol on delay analysis and disruption claims. Required reading for anyone working on EOT claims. Free download available.</p>
-            <a href="https://www.scl.org.uk/resources/delay-disruption-protocol" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit scl.org.uk</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">💰</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Standards</span>
-                <h3>AACE International</h3>
-              </div>
-            </div>
-            <p>Association for the Advancement of Cost Engineering. Home of Recommended Practices for EVM, forensic schedule analysis, and risk management (RP-68R-11). Essential reference body.</p>
-            <a href="https://web.aacei.org" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit aacei.org</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">🇧🇭</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Regulatory</span>
-                <h3>CRPEP Bahrain</h3>
-              </div>
-            </div>
-            <p>Council for Regulating the Practice of Engineering Professions in the Kingdom of Bahrain. Mandatory registration for engineers working in Bahrain. Apply for RE status here.</p>
-            <a href="https://www.crpep.bh" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit crpep.bh</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">💻</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Software</span>
-                <h3>Oracle Primavera P6</h3>
-              </div>
-            </div>
-            <p>The industry-standard scheduling tool for EPC, oil &amp; gas, and major infrastructure projects. Documentation, training resources, and licensing information available on Oracle's official site.</p>
-            <a href="https://www.oracle.com/industries/construction-engineering/primavera-p6" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit oracle.com</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">📊</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Software</span>
-                <h3>Microsoft Power BI</h3>
-              </div>
-            </div>
-            <p>The leading business intelligence tool for building executive dashboards from project data. Free desktop version for individuals — perfect for planning engineers building KPI dashboards.</p>
-            <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit powerbi.microsoft.com</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">📚</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Learning</span>
-                <h3>Plan Academy</h3>
-              </div>
-            </div>
-            <p>Excellent online training platform specifically for Primavera P6, EVM, and project controls. Run by Michael Lepage — practical, project-focused content for working planners.</p>
-            <a href="https://planacademy.com" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit planacademy.com</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">📰</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Industry News</span>
-                <h3>Construction Week Middle East</h3>
-              </div>
-            </div>
-            <p>The leading construction and infrastructure news source for the GCC region. Project announcements, contractor news, and market intelligence relevant to GCC planning engineers.</p>
-            <a href="https://www.constructionweekonline.com" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit constructionweekonline.com</a>
-          </div>
- 
-          <div class="resource-card">
-            <div class="resource-card-header">
-              <div class="resource-icon">🛢️</div>
-              <div class="resource-card-title">
-                <span class="resource-type">Industry News</span>
-                <h3>MEED — Middle East Business Intelligence</h3>
-              </div>
-            </div>
-            <p>Premium source for project announcements, contract awards, and energy sector intelligence across the GCC. Essential reading for tracking the EPC mega-project pipeline.</p>
-            <a href="https://www.meed.com" target="_blank" rel="noopener" class="resource-cta external">🔗 Visit meed.com</a>
-          </div>
- 
-        </div>
-      </div>
- 
+      <p class="breadcrumb"><a href="index.html">Home</a> / Templates</p>
+      <h1>Project-controls <em>templates</em></h1>
+      <p class="lead">Battle-tested templates and dashboards I've built and refined on real GCC projects — plus the external tools I actually use. Free, non-confidential, and ready to adapt.</p>
     </div>
   </section>
- 
-  <!-- ========== FOOTER ========== -->
+
+  <!-- FREE DOWNLOADS -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Free downloads</span>
+        <h2 class="title">Templates &amp; <em>dashboards</em></h2>
+        <p class="subtitle">Production-grade starting points so you don't build from scratch.</p>
+      </div>
+      <div class="grid grid-3">
+
+        <div class="card reveal">
+          <div class="card-icon">📊</div>
+          <span class="meta">Excel Template</span>
+          <h3>EVM Dashboard</h3>
+          <p>Auto-calculating SPI, CPI, EAC, ETC and VAC. Plug in BCWP/BCWS/ACWP weekly and the S-curves and trend charts update themselves.</p>
+          <span class="card-link">Download · <span class="badge-soon">Soon</span></span>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-icon">📝</div>
+          <span class="meta">Word Template</span>
+          <h3>EOT Claim (SCL aligned)</h3>
+          <p>Structured Extension of Time template: delay-event narrative, contemporaneous records, Time Impact Analysis, entitlement and quantum.</p>
+          <span class="card-link">Download · <span class="badge-soon">Soon</span></span>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-icon">📅</div>
+          <span class="meta">Excel Pack</span>
+          <h3>WPR / DPR Report Pack</h3>
+          <p>Executive weekly + daily progress reports: planned vs actual, SPI/CPI snapshot, critical-path status, delays log and 2-week look-ahead.</p>
+          <span class="card-link">Download · <span class="badge-soon">Soon</span></span>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-icon">⚠️</div>
+          <span class="meta">Excel Template</span>
+          <h3>Delay Log &amp; Risk Register</h3>
+          <p>Combined delay-event log and risk register aligned with AACE RP-68R-11 — contractual reference, severity, mitigation, owner and entitlement.</p>
+          <span class="card-link">Download · <span class="badge-soon">Soon</span></span>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-icon">👷</div>
+          <span class="meta">Excel Template</span>
+          <h3>Manhour &amp; Manpower Tracker</h3>
+          <p>Activity-code-based manhour tracking with planned vs actual, productivity index, overrun analysis and a manpower histogram.</p>
+          <span class="card-link">Download · <span class="badge-soon">Soon</span></span>
+        </div>
+
+        <div class="card reveal">
+          <div class="card-icon">📦</div>
+          <span class="meta">Excel Template</span>
+          <h3>Procurement Tracker</h3>
+          <p>PO → GRN → delivery → pending material, with lead-time alerts so material risk surfaces before it hits the programme.</p>
+          <span class="card-link">Download · <span class="badge-soon">Soon</span></span>
+        </div>
+
+      </div>
+
+      <div class="card reveal" style="margin-top:32px; background:var(--bg-alt); border-style:dashed; text-align:center;">
+        <p style="margin:0; color:var(--muted);">📥 Templates are being finalised for public download. <a href="index.html#contact">Email me</a> if you'd like early access to any of them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTERNAL TOOLS -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Recommended tools</span>
+        <h2 class="title">Tools &amp; references <em>I use</em></h2>
+        <p class="subtitle">Standards, software and learning resources worth your time.</p>
+      </div>
+      <div class="grid grid-auto">
+        <a href="https://www.pmi.org" target="_blank" rel="noopener" class="card reveal" style="color:inherit;"><div class="card-icon">🎓</div><span class="meta">Standards</span><h3>PMI</h3><p>PMBOK Guide, PMP® certification and project-management research.</p><span class="card-link">pmi.org →</span></a>
+        <a href="https://www.scl.org.uk/resources/delay-disruption-protocol" target="_blank" rel="noopener" class="card reveal" style="color:inherit;"><div class="card-icon">⚖️</div><span class="meta">Standards</span><h3>SCL Protocol</h3><p>The authoritative protocol on delay analysis and disruption claims.</p><span class="card-link">scl.org.uk →</span></a>
+        <a href="https://web.aacei.org" target="_blank" rel="noopener" class="card reveal" style="color:inherit;"><div class="card-icon">💰</div><span class="meta">Standards</span><h3>AACE International</h3><p>Recommended Practices for EVM, forensic schedule analysis &amp; risk.</p><span class="card-link">aacei.org →</span></a>
+        <a href="https://www.crpep.bh" target="_blank" rel="noopener" class="card reveal" style="color:inherit;"><div class="card-icon">🇧🇭</div><span class="meta">Regulatory</span><h3>CRPEP Bahrain</h3><p>Engineering-practice registration for the Kingdom of Bahrain.</p><span class="card-link">crpep.bh →</span></a>
+        <a href="https://www.oracle.com/industries/construction-engineering/primavera-p6" target="_blank" rel="noopener" class="card reveal" style="color:inherit;"><div class="card-icon">💻</div><span class="meta">Software</span><h3>Oracle Primavera P6</h3><p>The industry-standard scheduling tool for EPC &amp; infrastructure.</p><span class="card-link">oracle.com →</span></a>
+        <a href="https://powerbi.microsoft.com" target="_blank" rel="noopener" class="card reveal" style="color:inherit;"><div class="card-icon">📊</div><span class="meta">Software</span><h3>Microsoft Power BI</h3><p>Build executive dashboards from project data — free desktop version.</p><span class="card-link">powerbi.microsoft.com →</span></a>
+      </div>
+    </div>
+  </section>
+  </main>
+
   <footer>
-    <div class="container footer-content">
-      <p>&copy; <span id="year"></span> Muhammad Usman Tufail. All rights reserved.</p>
-      <p class="footer-tagline">Lead Planning &amp; Control Engineer | PMP® | CRPEP Bahrain</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Plan<span>&amp;</span>Control</a>
+          <p>Project controls, dashboards, delay analysis and AI workflows for EPC, oil &amp; gas and infrastructure projects across the GCC.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="projects.html">Projects</a>
+          <a href="dashboards.html">Dashboards</a>
+          <a href="ai-workflows.html">AI Workflows</a>
+          <a href="resources.html">Templates</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:usman@planandcontrol.com">Email</a>
+          <a href="tel:+97333548603">+973 3354 8603</a>
+          <a href="https://linkedin.com/in/engrusmanminhas" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="Muhammad_Usman_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Muhammad Usman Tufail · planandcontrol.com</p>
+        <div class="f-social">
+          <a href="https://linkedin.com/in/engrusmanminhas" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:usman@planandcontrol.com">Email</a>
+        </div>
+      </div>
     </div>
   </footer>
- 
+
   <script src="script.js"></script>
 </body>
 </html>

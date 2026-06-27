@@ -3,459 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Muhammad Usman Tufail | Planning &amp; Project Controls Consulting</title>
-  <meta name="description" content="Upcoming services: freelance planning &amp; project controls consulting, Primavera P6 training courses, and project controls templates for the GCC EPC industry.">
- 
-  <link rel="stylesheet" href="style.css">
+  <title>Services | Muhammad Usman Tufail — Planning &amp; Project Controls Consulting</title>
+  <meta name="description" content="Freelance planning &amp; project controls consulting, Primavera P6 training, and premium project-controls templates for the GCC EPC and oil &amp; gas industry.">
+  <link rel="canonical" href="https://planandcontrol.com/services.html">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
- 
-  <style>
-    /* ===== SERVICES PAGE ===== */
-    .page-hero {
-      background: linear-gradient(135deg, #061a30 0%, #0a2540 100%);
-      color: white;
-      padding: 160px 24px 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0;
-      width: 50%; height: 100%;
-      background: radial-gradient(circle at top right, rgba(201, 169, 97, 0.15), transparent 60%);
-    }
-    .page-hero-content {
-      position: relative;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .page-hero .eyebrow {
-      color: #c9a961;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .page-hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 5vw, 56px);
-      color: white;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-    .page-hero p {
-      font-size: 19px;
-      color: rgba(255, 255, 255, 0.85);
-      max-width: 640px;
-      margin: 0 auto;
-    }
- 
-    /* Coming soon banner */
-    .coming-soon-banner {
-      background: linear-gradient(135deg, #c9a961 0%, #e0c585 100%);
-      color: #0a2540;
-      padding: 24px 40px;
-      border-radius: 12px;
-      margin: -40px auto 40px;
-      max-width: 720px;
-      position: relative;
-      z-index: 10;
-      box-shadow: 0 10px 30px rgba(10, 37, 64, 0.2);
-      text-align: center;
-    }
- 
-    .coming-soon-banner h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      margin-bottom: 6px;
-      color: #0a2540;
-    }
- 
-    .coming-soon-banner p {
-      font-size: 14.5px;
-      color: #0a2540;
-      margin-bottom: 0;
-    }
- 
-    .coming-soon-banner strong {
-      color: #061a30;
-    }
- 
-    /* Services grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
-      margin: 60px 0;
-    }
- 
-    .service-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(10, 37, 64, 0.08);
-      transition: all 0.3s ease;
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      border: 1px solid #e5e9f0;
-    }
- 
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(10, 37, 64, 0.15);
-    }
- 
-    .service-sidebar {
-      background: linear-gradient(135deg, #0a2540 0%, #163b66 100%);
-      color: white;
-      padding: 40px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
- 
-    .service-sidebar::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: #c9a961;
-    }
- 
-    .service-icon-big {
-      font-size: 56px;
-      margin-bottom: 18px;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-    }
- 
-    .service-badge {
-      background: rgba(201, 169, 97, 0.2);
-      border: 1px solid #c9a961;
-      color: #c9a961;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-top: 14px;
-    }
- 
-    .service-body {
-      padding: 40px 36px;
-    }
- 
-    .service-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: #0a2540;
-      margin-bottom: 14px;
-      line-height: 1.2;
-    }
- 
-    .service-tagline {
-      color: #a88a45;
-      font-weight: 600;
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
- 
-    .service-body > p {
-      color: #5a6478;
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 22px;
-    }
- 
-    .service-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 24px 0;
-    }
- 
-    .service-features li {
-      padding: 8px 0 8px 28px;
-      color: #1a1a1a;
-      font-size: 14.5px;
-      position: relative;
-    }
- 
-    .service-features li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 20px;
-      height: 20px;
-      background: #c9a961;
-      color: #0a2540;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-    }
- 
-    .service-cta-row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-      padding-top: 20px;
-      border-top: 1px solid #e5e9f0;
-    }
- 
-    .service-cta-btn {
-      background: #0a2540;
-      color: #c9a961;
-      padding: 12px 24px;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid #0a2540;
-    }
- 
-    .service-cta-btn:hover {
-      background: #c9a961;
-      color: #0a2540;
-      border-color: #c9a961;
-    }
- 
-    .service-pricing {
-      color: #5a6478;
-      font-size: 13px;
-      margin-left: auto;
-    }
- 
-    /* Notify CTA */
-    .notify-section {
-      background: linear-gradient(135deg, #0a2540 0%, #163b66 100%);
-      color: white;
-      padding: 80px 40px;
-      border-radius: 12px;
-      text-align: center;
-      margin-top: 60px;
-      border: 1px solid rgba(201, 169, 97, 0.3);
-    }
- 
-    .notify-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      color: white;
-      margin-bottom: 16px;
-    }
- 
-    .notify-section p {
-      color: rgba(255, 255, 255, 0.85);
-      font-size: 17px;
-      max-width: 560px;
-      margin: 0 auto 30px;
-      line-height: 1.7;
-    }
- 
-    .notify-form {
-      display: flex;
-      gap: 12px;
-      max-width: 500px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
- 
-    .notify-form input {
-      flex: 1;
-      min-width: 200px;
-      padding: 14px 18px;
-      border: none;
-      border-radius: 4px;
-      font-size: 15px;
-      font-family: inherit;
-    }
- 
-    .notify-form button {
-      padding: 14px 28px;
-      background: #c9a961;
-      color: #0a2540;
-      border: none;
-      border-radius: 4px;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 15px;
-      transition: all 0.3s ease;
-    }
- 
-    .notify-form button:hover {
-      background: #e0c585;
-      transform: translateY(-2px);
-    }
- 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .service-card {
-        grid-template-columns: 1fr;
-      }
-      .service-sidebar {
-        padding: 30px 20px;
-      }
-      .service-body {
-        padding: 30px 24px;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
-  <!-- ========== NAVIGATION ========== -->
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="progress" id="progress"></div>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mClose" aria-label="Close menu">✕</button>
+    <a href="index.html#about">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="dashboards.html">Dashboards</a>
+    <a href="ai-workflows.html">AI Workflows</a>
+    <a href="resources.html">Templates</a>
+    <a href="blog.html">Blog</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+
   <nav id="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">MUT<span>.</span></a>
+      <a href="index.html" class="nav-logo">Plan<span>&amp;</span>Control</a>
       <ul class="nav-links">
         <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#skills">Skills</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="dashboards.html">Dashboards</a></li>
+        <li><a href="ai-workflows.html">AI Workflows</a></li>
+        <li><a href="resources.html">Templates</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="services.html" style="color:#c9a961;">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
     </div>
   </nav>
- 
-  <!-- ========== PAGE HERO ========== -->
+
+  <main id="main">
   <section class="page-hero">
-    <div class="page-hero-content">
-      <p class="eyebrow">Coming Soon</p>
-      <h1>Services</h1>
-      <p>Professional planning &amp; project controls services for EPC, oil &amp; gas, and infrastructure projects. Launching shortly — register interest below to be first to know.</p>
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Services</p>
+      <h1>Services <em>· launching soon</em></h1>
+      <p class="lead">Focused planning &amp; project-controls services for EPC, oil &amp; gas and infrastructure projects across the GCC. Register your interest below to hear the moment each goes live.</p>
     </div>
   </section>
- 
-  <!-- ========== COMING SOON BANNER ========== -->
-  <div class="coming-soon-banner">
-    <h3>🚧 Services Launching Soon</h3>
-    <p>I'm preparing a focused range of planning &amp; project controls services. <strong>Subscribe at the bottom of this page</strong> to be notified the moment they go live.</p>
-  </div>
- 
-  <!-- ========== SERVICES ========== -->
-  <section class="section" style="padding-top: 40px;">
+
+  <section>
     <div class="container">
- 
-      <div class="services-grid">
- 
-        <!-- SERVICE 1: CONSULTING -->
-        <div class="service-card">
-          <div class="service-sidebar">
-            <div class="service-icon-big">💼</div>
-            <p style="font-size:13px; color:rgba(255,255,255,0.7); letter-spacing:2px; text-transform:uppercase;">Service 01</p>
-            <span class="service-badge">Coming Soon</span>
-          </div>
-          <div class="service-body">
-            <h3>Freelance Planning &amp; Project Controls</h3>
-            <p class="service-tagline">For contractors, PMCs, and clients on EPC &amp; oil &amp; gas projects</p>
-            <p>Senior planning &amp; project controls expertise delivered remotely or on-site across the GCC. Whether you need a baseline built, an EOT claim defended, or a struggling schedule recovered — bring real BAPCO-grade discipline to your project.</p>
-            <ul class="service-features">
-              <li>Primavera P6 / EPPM baseline development &amp; maintenance</li>
-              <li>Earned Value Management (EVM) implementation &amp; reporting</li>
-              <li>EOT &amp; prolongation claims preparation (SCL Protocol)</li>
-              <li>Forensic delay analysis &amp; Time Impact Analysis (TIA)</li>
-              <li>Power BI dashboards &amp; executive reporting</li>
-              <li>Schedule risk analysis &amp; recovery planning</li>
-            </ul>
-            <div class="service-cta-row">
-              <a href="index.html#contact" class="service-cta-btn">Register Interest</a>
-              <span class="service-pricing">📅 Hourly / Project-based</span>
-            </div>
-          </div>
+      <div class="grid grid-3">
+
+        <div class="card reveal">
+          <div class="card-icon">💼</div>
+          <span class="badge-soon">Coming soon</span>
+          <h3 style="margin-top:14px;">Freelance Project Controls</h3>
+          <p>Senior planning &amp; controls delivered remotely or on-site: baselines, EVM, EOT claims, forensic delay analysis, recovery planning and Power BI dashboards.</p>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>P6 / EPPM baseline development</li>
+            <li>EVM implementation &amp; reporting</li>
+            <li>EOT &amp; prolongation claims (SCL)</li>
+            <li>Dashboards &amp; executive reporting</li>
+          </ul>
+          <a href="index.html#contact" class="btn-ghost btn-sm" style="margin-top:18px;">Register interest</a>
         </div>
- 
-        <!-- SERVICE 2: TRAINING -->
-        <div class="service-card">
-          <div class="service-sidebar">
-            <div class="service-icon-big">🎓</div>
-            <p style="font-size:13px; color:rgba(255,255,255,0.7); letter-spacing:2px; text-transform:uppercase;">Service 02</p>
-            <span class="service-badge">Coming Soon</span>
-          </div>
-          <div class="service-body">
-            <h3>Primavera P6 Training &amp; Coaching</h3>
-            <p class="service-tagline">Practical, project-based courses for working planning engineers</p>
-            <p>Real-project training designed by an engineer who actually uses P6 every day on a refinery project — not classroom theory. Self-paced online courses and live coaching sessions covering foundation, intermediate, and advanced topics.</p>
-            <ul class="service-features">
-              <li>Primavera P6 Foundation (12-hour online course)</li>
-              <li>Primavera P6 Advanced (resource &amp; cost loading, EVM)</li>
-              <li>EVM &amp; EOT Claims masterclass</li>
-              <li>Power BI for Project Controls (build executive dashboards)</li>
-              <li>1-on-1 coaching for working professionals</li>
-              <li>Bilingual support (English / Urdu)</li>
-            </ul>
-            <div class="service-cta-row">
-              <a href="index.html#contact" class="service-cta-btn">Register Interest</a>
-              <span class="service-pricing">📚 Course / Subscription</span>
-            </div>
-          </div>
+
+        <div class="card reveal">
+          <div class="card-icon">🎓</div>
+          <span class="badge-soon">Coming soon</span>
+          <h3 style="margin-top:14px;">Primavera P6 Training</h3>
+          <p>Practical, project-based courses by an engineer who uses P6 daily on a live refinery — not classroom theory. Self-paced online plus 1-on-1 coaching.</p>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>P6 Foundation &amp; Advanced</li>
+            <li>EVM &amp; EOT claims masterclass</li>
+            <li>Power BI for project controls</li>
+            <li>Bilingual (English / Urdu)</li>
+          </ul>
+          <a href="index.html#contact" class="btn-ghost btn-sm" style="margin-top:18px;">Register interest</a>
         </div>
- 
-        <!-- SERVICE 3: TEMPLATES -->
-        <div class="service-card">
-          <div class="service-sidebar">
-            <div class="service-icon-big">📦</div>
-            <p style="font-size:13px; color:rgba(255,255,255,0.7); letter-spacing:2px; text-transform:uppercase;">Service 03</p>
-            <span class="service-badge">Coming Soon</span>
-          </div>
-          <div class="service-body">
-            <h3>Project Controls Templates</h3>
-            <p class="service-tagline">Premium downloadable Excel templates and dashboards</p>
-            <p>Production-grade Excel templates and Power BI dashboards used on real BAPCO Energies and NLC projects. Save weeks of building from scratch — download, customise the cover sheet, and start reporting like a senior project controls professional.</p>
-            <ul class="service-features">
-              <li>EVM Dashboard with auto-calculating SPI, CPI, EAC</li>
-              <li>EOT Claim Template (SCL Protocol aligned)</li>
-              <li>Weekly &amp; Monthly Progress Report packs</li>
-              <li>Combined Delay Log &amp; Risk Register</li>
-              <li>Man-Hour Tracker (activity-code based)</li>
-              <li>Power BI executive dashboard templates</li>
-            </ul>
-            <div class="service-cta-row">
-              <a href="index.html#contact" class="service-cta-btn">Register Interest</a>
-              <span class="service-pricing">💰 One-time / Bundles</span>
-            </div>
-          </div>
+
+        <div class="card reveal">
+          <div class="card-icon">📦</div>
+          <span class="badge-soon">Coming soon</span>
+          <h3 style="margin-top:14px;">Premium Templates</h3>
+          <p>Production-grade Excel &amp; Power BI templates used on real BAPCO and NLC projects. Download, customise, and start reporting like a senior controls professional.</p>
+          <ul class="check-list" style="margin-top:12px;">
+            <li>EVM dashboard (auto SPI/CPI/EAC)</li>
+            <li>EOT claim template (SCL)</li>
+            <li>WPR/DPR &amp; delay-log packs</li>
+            <li>Manhour &amp; procurement trackers</li>
+          </ul>
+          <a href="resources.html" class="btn-ghost btn-sm" style="margin-top:18px;">See free templates</a>
         </div>
- 
+
       </div>
- 
-      <!-- ========== NOTIFY ME ========== -->
-      <div class="notify-section">
-        <h2>Be First to Know When Services Launch</h2>
-        <p>Drop your email below. You'll get a direct notification the moment each service goes live — and early subscribers will receive launch discounts on courses and templates.</p>
-        <form class="notify-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+      <!-- Notify -->
+      <div class="cta-banner reveal" style="margin-top:56px;">
+        <h2>Be first to know when services launch</h2>
+        <p>Drop your email and you'll get a direct notification the moment each service goes live — early subscribers receive launch discounts on courses and templates.</p>
+        <form class="capture" data-ajax action="https://formspree.io/f/mqejrgpv" method="POST">
           <input type="email" name="email" placeholder="your@email.com" required>
           <input type="hidden" name="source" value="Services Page - Notify Me">
-          <button type="submit">Notify Me</button>
+          <button type="submit" class="btn-primary">Notify me</button>
+          <p class="form-note" style="flex-basis:100%; text-align:center; color:#fff;"></p>
         </form>
       </div>
- 
     </div>
   </section>
- 
-  <!-- ========== FOOTER ========== -->
+  </main>
+
   <footer>
-    <div class="container footer-content">
-      <p>&copy; <span id="year"></span> Muhammad Usman Tufail. All rights reserved.</p>
-      <p class="footer-tagline">Lead Planning &amp; Control Engineer | PMP® | CRPEP Bahrain</p>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Plan<span>&amp;</span>Control</a>
+          <p>Project controls, dashboards, delay analysis and AI workflows for EPC, oil &amp; gas and infrastructure projects across the GCC.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="projects.html">Projects</a>
+          <a href="dashboards.html">Dashboards</a>
+          <a href="ai-workflows.html">AI Workflows</a>
+          <a href="resources.html">Templates</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="mailto:usman@planandcontrol.com">Email</a>
+          <a href="tel:+97333548603">+973 3354 8603</a>
+          <a href="https://linkedin.com/in/engrusmanminhas" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="Muhammad_Usman_CV.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Muhammad Usman Tufail · planandcontrol.com</p>
+        <div class="f-social">
+          <a href="https://linkedin.com/in/engrusmanminhas" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:usman@planandcontrol.com">Email</a>
+        </div>
+      </div>
     </div>
   </footer>
- 
+
   <script src="script.js"></script>
 </body>
 </html>
