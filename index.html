@@ -46,7 +46,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -88,12 +90,11 @@
 
   <!-- HERO -->
   <header id="hero">
-    <div class="schedule-canvas" id="schedule" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"></div>
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-copy reveal-l">
+        <div class="hero-copy">
           <span class="hero-eyebrow">Planning Engineer · Project Controls · Bahrain</span>
-          <h1 class="hero-name">Muhammad <em>Usman</em> Tufail<span style="color:var(--accent)">.</span></h1>
+          <h1 class="hero-name"><span class="line"><span>Muhammad</span></span><span class="line"><span><em>Usman</em> Tufail<span style="color:var(--accent)">.</span></span></span></h1>
           <p class="hero-roles">Planning Engineer &nbsp;·&nbsp; <b>Project Controls</b> &nbsp;·&nbsp; Delay Analysis &nbsp;·&nbsp; <b>Power BI Dashboards</b> &nbsp;·&nbsp; Construction AI Workflows</p>
           <p class="hero-value">I help construction and EPC projects convert schedules, cost data, manpower, procurement and site reports into clear management dashboards, recovery plans and control systems.</p>
           <div class="hero-badges">
@@ -109,7 +110,7 @@
             <a href="dashboards.html" class="btn-ghost">See Dashboards</a>
           </div>
         </div>
-        <div class="hero-photo reveal-r">
+        <div class="hero-photo">
           <img src="profile.jpg" alt="Muhammad Usman Tufail, Planning &amp; Project Controls Engineer" width="1000" height="1250">
           <div class="hero-photo-card">
             <b>7+ yrs</b>
@@ -159,7 +160,7 @@
         <h2 class="title">Core <em>expertise</em></h2>
         <p class="subtitle">From baseline to recovery — the full project-controls lifecycle, backed by dashboards and AI.</p>
       </div>
-      <div class="grid grid-3">
+      <div class="grid grid-3" data-stagger="0.07">
         <div class="card reveal"><div class="card-icon">🗓️</div><h3>Planning &amp; Scheduling</h3><p>Baselines, CPM logic, resource &amp; cost loading, recovery plans and look-aheads in Primavera P6 / EPPM and MS Project.</p></div>
         <div class="card reveal"><div class="card-icon">💰</div><h3>Cost Control</h3><p>Budget vs actual tracking, IPC billing, cash-flow curves and value-of-work-done across multi-million-dollar portfolios.</p></div>
         <div class="card reveal"><div class="card-icon">⏱️</div><h3>Delay Analysis &amp; Claims</h3><p>Forensic delay analysis, Time Impact Analysis, EOT, prolongation and disruption claims under the SCL Protocol.</p></div>
@@ -178,7 +179,7 @@
         <h2 class="title">Featured <em>case studies</em></h2>
         <p class="subtitle">Real projects — the problem, my role, the deliverables, and the measurable result.</p>
       </div>
-      <div class="grid grid-2">
+      <div class="grid grid-2" data-stagger="0.08">
         <a href="case-hlph.html" class="card reveal" style="color:inherit;">
           <span class="meta">Live · Oil &amp; Gas</span>
           <h3>High Lift Pump House Substation Upgrade</h3>
@@ -255,7 +256,7 @@
         <div class="card reveal" style="background:var(--accent-soft); border-color:#dbe6fe;">
           <span class="meta">Dashboards &amp; Controls</span>
           <h3>See the dashboards I build</h3>
-          <p>Budget vs Actual, DPR/WPR, manpower histograms, procurement trackers, delay logs and full EVM (SPI/CPI + S-curve) — rendered as live samples using anonymized project-control data.</p>
+          <p>Four full executive report pages — Portfolio Overview, an 18-month EVM deep dive, Progress &amp; Manpower, and Cost &amp; Procurement — with interactive charts, live tooltips and full data tables, built from anonymized project data.</p>
           <div style="margin-top:20px;"><a href="dashboards.html" class="btn-primary btn-sm">Open Dashboards</a></div>
         </div>
         <div class="card reveal" style="background:var(--ink); border-color:var(--ink);">
@@ -275,7 +276,7 @@
         <span class="eyebrow center">Expertise</span>
         <h2 class="title">Skills &amp; <em>credentials</em></h2>
       </div>
-      <div class="grid grid-auto">
+      <div class="grid grid-auto" data-stagger="0.07">
         <div class="skill-group card reveal">
           <h3>Scheduling &amp; Controls</h3>
           <ul>

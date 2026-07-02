@@ -57,6 +57,12 @@
   });
 
   /* ---- Reveal on scroll ---- */
+  /* [data-stagger] parents: give child reveals an incremental delay */
+  document.querySelectorAll('[data-stagger]').forEach(function (parent) {
+    var step = parseFloat(parent.dataset.stagger) || 0.07;
+    var kids = parent.querySelectorAll('.reveal, .reveal-l, .reveal-r');
+    kids.forEach(function (el, i) { el.style.transitionDelay = (i * step).toFixed(2) + 's'; });
+  });
   var revealEls = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
   if (revealEls.length) {
     if ('IntersectionObserver' in window && !reduce) {
@@ -120,14 +126,4 @@
     });
   });
 
-  /* ---- Home hero: animated schedule bars (subtle, optional) ---- */
-  var sched = document.getElementById('schedule');
-  if (sched && !reduce) {
-    for (var i = 0; i < 7; i++) {
-      var bar = document.createElement('div');
-      bar.style.cssText = 'position:absolute;height:6px;border-radius:3px;background:rgba(37,99,235,0.10);top:' +
-        (12 + i * 12) + '%;left:' + (Math.random() * 12) + '%;width:' + (24 + Math.random() * 50) + '%;';
-      sched.appendChild(bar);
-    }
-  }
 })();
