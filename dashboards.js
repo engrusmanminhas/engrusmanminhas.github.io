@@ -458,6 +458,7 @@
       tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.dash === id); });
       dashes.forEach(function (d) { d.classList.toggle('active', d.id === 'dash-' + id); });
       if (push) history.replaceState(null, '', '#' + id);
+      if (push && typeof window.gtag === 'function') window.gtag('event', 'dashboard_tab', { tab: id });
     }
     tabs.forEach(function (t) {
       t.addEventListener('click', function () { activate(t.dataset.dash, true); });

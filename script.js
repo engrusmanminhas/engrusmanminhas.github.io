@@ -6,6 +6,18 @@
   'use strict';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---- GA4 event helper (no-op when analytics inactive) ---- */
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  /* ---- CV download tracking ---- */
+  document.querySelectorAll('a[href*="Muhammad_Usman_CV"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('cv_download', { page: location.pathname });
+    });
+  });
+
   /* ---- Footer year ---- */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
@@ -114,6 +126,10 @@
       try {
         var res = await fetch(action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
         if (res.ok) {
+          var isContact = !!form.querySelector('input[name="name"]');
+          var src = form.querySelector('input[name="source"]');
+          track(isContact ? 'contact_form_submit' : 'newsletter_subscribe',
+                { source: src ? src.value : 'Contact form', page: location.pathname });
           if (note) { note.textContent = '✓ Thank you — your message has been sent. I will respond shortly.'; note.className = 'form-note success'; }
           form.reset();
         } else {
