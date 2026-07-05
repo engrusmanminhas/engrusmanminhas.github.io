@@ -4,7 +4,7 @@
    Until a real ID is set, nothing loads and no data is sent.
    ============================================================ */
 (function () {
-  var GA_ID = 'G-XXXXXXXXXX'; /* TODO: replace with your GA4 Measurement ID */
+  var GA_ID = 'G-ZTG9H19423';
   if (GA_ID === 'G-XXXXXXXXXX' || !/^G-[A-Z0-9]{6,}$/.test(GA_ID)) return;
 
   var s = document.createElement('script');
