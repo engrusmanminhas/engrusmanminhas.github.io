@@ -322,18 +322,19 @@ section { padding: clamp(74px, 11vh, 130px) 0; }
 /* photo on the black panel */
 .hero-photo {
   position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: center;
+  margin-right: calc(-1 * var(--gutter));   /* bleed into the black margin so the portrait can be larger */
   opacity: 0; animation: fadeUp .9s ease .45s forwards;
 }
 .hero-photo picture { position: relative; z-index: 1; display: block; }
 .hero-photo img {
-  height: min(80vh, 760px); width: auto; max-width: 100%;
+  width: min(100%, 640px, 80vh); height: auto;
   display: block;
   filter: drop-shadow(0 28px 48px rgba(0,0,0,0.55));
 }
 /* soft accent glow behind the figure */
 .hero-photo::before {
   content: ''; position: absolute; z-index: 0;
-  left: 50%; bottom: 18%; width: 78%; aspect-ratio: 1; transform: translateX(-50%);
+  left: 50%; bottom: 6%; width: 84%; aspect-ratio: 1; transform: translateX(-50%);
   background: radial-gradient(circle, rgba(37,99,235,0.42) 0%, rgba(37,99,235,0.14) 42%, transparent 70%);
   filter: blur(8px);
   pointer-events: none;
@@ -344,7 +345,7 @@ section { padding: clamp(74px, 11vh, 130px) 0; }
   background: linear-gradient(90deg, transparent, rgba(125,211,252,0.7), transparent);
 }
 .hero-photo-card {
-  position: absolute; left: 4%; bottom: 40px; z-index: 2;
+  position: absolute; left: 5%; top: 40%; z-index: 2;
   background: #fff; border-radius: 12px; box-shadow: var(--shadow-lg); padding: 14px 20px;
 }
 .hero-photo-card b { display: block; font-family: var(--display); font-size: 22px; font-weight: 800; color: #111; }
@@ -698,8 +699,8 @@ footer { background: var(--dark); color: #c9c9c9; padding: 60px 0 34px; }
     padding: 44px var(--gutter) 0;
     clip-path: polygon(0 34px, 100% 0, 100% 100%, 0 100%);
   }
-  .hero-photo img { height: auto; width: min(100%, 360px); }
-  .hero-photo-card { left: var(--gutter); bottom: 24px; }
+  .hero-photo img { height: auto; width: min(100%, 420px); }
+  .hero-photo-card { top: auto; right: auto; left: var(--gutter); bottom: 24px; }
   .hero-scroll { display: none; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-img { max-width: 340px; margin: 0 auto; }
