@@ -33,15 +33,19 @@
   var WEEKS16 = []; for (var w = 1; w <= 16; w++) WEEKS16.push('W' + w);
 
   var DATA = {
+    /* Real projects and contract values from the CV. PKR values are shown
+       in USD at ~Rs 280 per USD; value: null = no contract value stated. */
     portfolio: [
-      { name: 'HLPH Substation Upgrade',        sector: 'Oil & Gas',      value: 3.3,   pc: 68,  spi: 0.94, cpi: 1.02, status: ['warn', 'Watch'] },
-      { name: 'New Fire School Building',       sector: 'Construction',   value: 1.3,   pc: 54,  spi: 1.01, cpi: 1.03, status: ['ok', 'On track'] },
-      { name: 'Gilgit–Shandoor Road Pkg III',   sector: 'Infrastructure', value: 54.0,  pc: 100, spi: 0.97, cpi: 0.99, status: ['info', 'Complete'] },
-      { name: 'Jaglot–Skardu Road & Bridges',   sector: 'EPC',            value: 110.0, pc: 100, spi: 1.05, cpi: 1.01, status: ['info', 'Complete'] },
-      { name: '50-Bed Cardiac Hospital, GB',    sector: 'Healthcare',     value: 2.6,   pc: 100, spi: 0.98, cpi: 1.00, status: ['info', 'Complete'] },
-      { name: 'Capital Smart City (phase)',     sector: 'Smart City',     value: 85.0,  pc: 100, spi: 0.96, cpi: 0.98, status: ['info', 'Complete'] },
-      { name: 'Bridges Task Force (8 no.)',     sector: 'EPC',            value: 38.0,  pc: 100, spi: 1.20, cpi: 1.04, status: ['info', 'Complete'] },
-      { name: 'Bahria Town Housing Works',      sector: 'Residential',    value: 6.5,   pc: 100, spi: 0.99, cpi: 1.00, status: ['info', 'Complete'] }
+      { name: 'HLPH Substation Upgrade',       employer: 'MCSC · BAPCO Energies', orig: 'BHD 1.23M',      value: 3.3,   period: '2025 – present', status: ['ok', 'Live'] },
+      { name: 'Fire School Building',          employer: 'MCSC · BAPCO Energies', orig: 'BHD 481K',       value: 1.3,   period: '2025 – present', status: ['ok', 'Live'] },
+      { name: 'Gilgit–Shandoor Road Pkg-III',  employer: 'NLC',                   orig: 'Rs 15,053M',     value: 53.8,  period: '2022 – 2024',    status: ['info', 'Past role'] },
+      { name: 'Sewage Collection Pkg-I',       employer: 'NLC',                   orig: 'Rs 1,945M',      value: 6.9,   period: '2022 – 2024',    status: ['info', 'Past role'] },
+      { name: '50-Bed Cardiac Hospital, GB',   employer: 'NLC',                   orig: 'Rs 740M',        value: 2.6,   period: '2022 – 2024',    status: ['info', 'Past role'] },
+      { name: 'Sewerage Treatment Plant Pkg-5', employer: 'NLC',                  orig: 'Rs 640M',        value: 2.3,   period: '2022 – 2024',    status: ['info', 'Past role'] },
+      { name: 'Capital Smart City',            employer: 'Habib Rafiq',           orig: 'Multi-bn PKR',   value: null,  period: '2021 – 2022',    status: ['info', 'Past role'] },
+      { name: 'Jaglot–Skardu Road + 20 Bridges', employer: 'FWO',                 orig: 'Rs 31,000M',     value: 110.7, period: '2019 – 2021',    status: ['info', 'Past role'] },
+      { name: 'KKH Maintenance (600 km)',      employer: 'FWO',                   orig: 'KPI-based',      value: null,  period: '2019 – 2021',    status: ['info', 'Past role'] },
+      { name: 'Bahria Town Lahore Works',      employer: 'Awais Construction',    orig: 'Rs 20M',         value: 0.07,  period: '2018 – 2019',    status: ['info', 'Past role'] }
     ],
 
     evm: {
@@ -471,19 +475,19 @@
     var pf = DATA.portfolio;
     mountChart('pf-value', function (host) {
       hBars(host, {
-        items: pf.slice().sort(function (a, b) { return b.value - a.value; }).map(function (p) {
-          return { label: p.name, value: p.value, sub: 'Contract value' };
-        }),
+        items: pf.filter(function (p) { return p.value != null; })
+          .sort(function (a, b) { return b.value - a.value; }).map(function (p) {
+            return { label: p.name, value: p.value, sub: p.orig + ' · ' + p.employer };
+          }),
         max: 115, fmt: FMT.usdM,
         aria: 'Contract value by project, USD millions'
       });
     });
     fillTable('portfolio', pf.map(function (p) {
-      return '<tr><td>' + p.name + '</td><td>' + p.sector + '</td>' +
-        '<td class="num">' + FMT.usdM(p.value) + '</td>' +
-        '<td class="num">' + p.pc + '%</td>' +
-        '<td class="num">' + p.spi.toFixed(2) + '</td>' +
-        '<td class="num">' + p.cpi.toFixed(2) + '</td>' +
+      return '<tr><td>' + p.name + '</td><td>' + p.employer + '</td>' +
+        '<td class="num">' + p.orig + '</td>' +
+        '<td class="num">' + (p.value == null ? '—' : FMT.usdM(p.value)) + '</td>' +
+        '<td>' + p.period + '</td>' +
         '<td>' + pill(p.status[0], p.status[1]) + '</td></tr>';
     }).join(''));
 

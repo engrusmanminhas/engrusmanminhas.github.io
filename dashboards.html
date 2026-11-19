@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="ga.js"></script>
-  <link rel="stylesheet" href="style.css?v=mono7">
+  <link rel="stylesheet" href="style.css?v=mono8">
 </head>
 <body>
 
@@ -54,7 +54,7 @@
     <div class="container">
       <p class="breadcrumb"><a href="index.html">Home</a> / Dashboards</p>
       <h1>Executive <em>dashboards</em></h1>
-      <p class="lead">Four full project-control report pages — portfolio health, earned value, progress &amp; manpower, and cost &amp; procurement. Rendered live in your browser with <strong>anonymized sample data</strong>; on real projects these are delivered in Power BI and Excel, wired to P6 and ERP.</p>
+      <p class="lead">Four full project-control report pages — portfolio health, earned value, progress &amp; manpower, and cost &amp; procurement. The Portfolio Overview lists my real projects; the other three pages use <strong>anonymized sample data</strong>. On live projects these are delivered in Power BI and Excel, wired to P6 and ERP.</p>
     </div>
   </section>
 
@@ -74,34 +74,34 @@
         <div class="dash-title-row">
           <div>
             <h2>Portfolio overview</h2>
-            <p>Eight delivered &amp; live projects across oil &amp; gas, EPC and infrastructure — USD 300M+ of controlled work.</p>
+            <p>Ten projects across five employers in Bahrain and Pakistan — USD 180M+ in stated contract value.</p>
           </div>
-          <span class="sample-note">Sample · anonymized project-control data</span>
+          <span class="sample-note">Contract values from CV · PKR at ~Rs 280 / USD</span>
         </div>
 
         <div class="kpi-row kpi-5">
-          <div class="kpi"><div class="k-label">Portfolio value</div><div class="k-val">$300.7<small>M</small></div><span class="k-delta up">8 projects</span></div>
-          <div class="kpi"><div class="k-label">Live projects</div><div class="k-val">2</div><span class="k-delta up">USD 4.6M</span></div>
-          <div class="kpi"><div class="k-label">Avg SPI</div><div class="k-val">1.01</div><span class="k-delta up">▲ on plan</span></div>
-          <div class="kpi"><div class="k-label">Avg CPI</div><div class="k-val">1.01</div><span class="k-delta up">▲ under budget</span></div>
-          <div class="kpi"><div class="k-label">Open constraints</div><div class="k-val">6</div><span class="k-delta down">1 critical</span></div>
+          <div class="kpi"><div class="k-label">Contract value</div><div class="k-val">$181<small>M</small></div><span class="k-delta up">8 valued projects</span></div>
+          <div class="kpi"><div class="k-label">Live portfolio</div><div class="k-val">$4.5<small>M</small></div><span class="k-delta up">BHD 1.7M+ · BAPCO</span></div>
+          <div class="kpi"><div class="k-label">Projects</div><div class="k-val">10</div><span class="k-delta up">5 employers</span></div>
+          <div class="kpi"><div class="k-label">Experience</div><div class="k-val">7+<small> yrs</small></div><span class="k-delta up">Bahrain &amp; Pakistan</span></div>
+          <div class="kpi"><div class="k-label">Bridges delivered</div><div class="k-val">8</div><span class="k-delta up">20% faster delivery</span></div>
         </div>
 
         <div class="panel-grid">
           <div class="panel">
             <div class="panel-head">
-              <div><h3>Contract value by project</h3><p>USD millions, all projects controlled end-to-end</p></div>
+              <div><h3>Contract value by project</h3><p>USD millions · projects with a stated contract value</p></div>
             </div>
             <div class="panel-body" data-chart="pf-value"></div>
           </div>
           <div class="panel">
             <div class="panel-head">
-              <div><h3>Project health</h3><p>Progress, schedule &amp; cost performance per project</p></div>
+              <div><h3>Project register</h3><p>Every project on the CV, with employer, contract value and period</p></div>
             </div>
             <div class="panel-body flush">
               <div class="table-wrap" style="border:none; border-radius:0;">
                 <table class="data">
-                  <thead><tr><th>Project</th><th>Sector</th><th class="num">Value</th><th class="num">% Compl.</th><th class="num">SPI</th><th class="num">CPI</th><th>Status</th></tr></thead>
+                  <thead><tr><th>Project</th><th>Employer</th><th class="num">Contract value</th><th class="num">≈ USD</th><th>Period</th><th>Status</th></tr></thead>
                   <tbody data-table="portfolio"></tbody>
                 </table>
               </div>
@@ -336,7 +336,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=mono7"></script>
-  <script src="dashboards.js?v=mono7"></script>
+  <script src="script.js?v=mono8"></script>
+  <script src="dashboards.js?v=mono8"></script>
 </body>
 </html>
