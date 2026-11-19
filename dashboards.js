@@ -38,6 +38,9 @@
     portfolio: [
       { name: 'HLPH Substation Upgrade',       employer: 'MCSC · BAPCO Energies', orig: 'BHD 1.23M',      value: 3.3,   period: '2025 – present', status: ['ok', 'Live'] },
       { name: 'Fire School Building',          employer: 'MCSC · BAPCO Energies', orig: 'BHD 481K',       value: 1.3,   period: '2025 – present', status: ['ok', 'Live'] },
+      { name: 'ALBA SMPP & E&I Erection',      employer: 'MCSC · ALBA / Fives Solios', orig: 'Re-measurable', value: null, period: '2025 – present', status: ['ok', 'Live'] },
+      { name: 'ALBA PS4 & PS5 Steel Mesh Covers', employer: 'MCSC · ALBA',        orig: 'In BHD 2.7M+ portfolio', value: null, period: '2025 – present', status: ['ok', 'Live'] },
+      { name: 'ALBA Anode Grab Arm Fabrication', employer: 'MCSC · ALBA',         orig: 'In BHD 2.7M+ portfolio', value: null, period: '2025 – present', status: ['ok', 'Live'] },
       { name: 'Gilgit–Shandoor Road Pkg-III',  employer: 'NLC',                   orig: 'Rs 15,053M',     value: 53.8,  period: '2022 – 2024',    status: ['info', 'Past role'] },
       { name: 'Sewage Collection Pkg-I',       employer: 'NLC',                   orig: 'Rs 1,945M',      value: 6.9,   period: '2022 – 2024',    status: ['info', 'Past role'] },
       { name: '50-Bed Cardiac Hospital, GB',   employer: 'NLC',                   orig: 'Rs 740M',        value: 2.6,   period: '2022 – 2024',    status: ['info', 'Past role'] },
