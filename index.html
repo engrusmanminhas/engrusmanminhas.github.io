@@ -48,7 +48,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="ga.js"></script>
-  <link rel="stylesheet" href="style.css?v=mono4">
+  <link rel="stylesheet" href="style.css?v=mono5">
 </head>
 <body>
 
@@ -113,7 +113,10 @@
           </div>
         </div>
         <div class="hero-photo">
-          <img src="profile-cutout.png" alt="Muhammad Usman Tufail, Planning &amp; Project Controls Engineer" width="1000" height="1161">
+          <picture>
+            <source srcset="profile-hero.webp" type="image/webp">
+            <img src="profile-hero.png" alt="Muhammad Usman Tufail, Planning &amp; Project Controls Engineer" width="863" height="1100" fetchpriority="high">
+          </picture>
           <div class="hero-photo-card">
             <b>7+ yrs</b>
             <span>EPC · Oil &amp; Gas · Infra</span>
@@ -173,45 +176,62 @@
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS -->
-  <section id="projects">
+  <!-- FEATURED PROJECTS (dark portfolio band) -->
+  <section id="projects" class="portfolio-band">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow center">Portfolio</span>
-        <h2 class="title">Featured <em>case studies</em></h2>
+        <h2 class="title">Featured <em>work</em></h2>
         <p class="subtitle">Real projects — the problem, my role, the deliverables, and the measurable result.</p>
       </div>
-      <div class="grid grid-2" data-stagger="0.08">
-        <a href="case-hlph.html" class="card reveal" style="color:inherit;">
-          <span class="meta">Live · Oil &amp; Gas</span>
-          <h3>High Lift Pump House Substation Upgrade</h3>
-          <p>BAPCO Energies · BHD 1.23M (~USD 3.3M). End-to-end P6 scheduling, EVM, baseline, EOT claims and weekly dashboards under strict PTW &amp; H₂S protocols.</p>
-          <div class="chips"><span class="chip">P6</span><span class="chip">EVM</span><span class="chip">EOT</span><span class="chip">Power BI</span></div>
-          <span class="card-link">Read case study →</span>
+      <div class="filter-row" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="live">Live</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+        <button class="filter-btn" data-filter="method">Methods</button>
+      </div>
+      <div class="p-grid" data-stagger="0.08">
+        <a href="case-hlph.html" class="p-tile reveal" data-cat="live" style="--tile-bg: linear-gradient(140deg, #1d4ed8 0%, #0b1a3d 55%, #0a0a0a 100%);">
+          <svg class="p-art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g fill="#93c5fd"><rect x="40" y="40" width="150" height="14" rx="7"/><rect x="110" y="72" width="170" height="14" rx="7"/><rect x="170" y="104" width="120" height="14" rx="7" fill="#7dd3fc"/><rect x="240" y="136" width="130" height="14" rx="7"/><rect x="300" y="168" width="80" height="14" rx="7" fill="#7dd3fc"/></g>
+            <path d="M190 47 V72 M280 79 V104 M290 111 V136" stroke="#bfdbfe" stroke-width="2" fill="none" stroke-dasharray="3 4"/>
+          </svg>
+          <span class="p-tag">Live · Oil &amp; Gas</span>
+          <h3>HLPH Substation Upgrade</h3>
+          <p>BAPCO Energies · ~USD 3.3M — cutover schedule, EVM, EOT and weekly dashboards under PTW &amp; H₂S.</p>
+          <span class="p-go">Read case study →</span>
         </a>
-        <a href="case-fireschool.html" class="card reveal" style="color:inherit;">
-          <span class="meta">Live · Construction</span>
+        <a href="case-fireschool.html" class="p-tile reveal" data-cat="live" style="--tile-bg: linear-gradient(140deg, #0f9d6c 0%, #07301f 55%, #0a0a0a 100%);">
+          <svg class="p-art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g fill="#6ee7b7"><rect x="60" y="120" width="34" height="120" rx="6"/><rect x="100" y="150" width="34" height="90" rx="6" fill="#a7f3d0"/><rect x="170" y="80" width="34" height="160" rx="6"/><rect x="210" y="110" width="34" height="130" rx="6" fill="#a7f3d0"/><rect x="280" y="60" width="34" height="180" rx="6"/><rect x="320" y="95" width="34" height="145" rx="6" fill="#a7f3d0"/></g>
+          </svg>
+          <span class="p-tag">Live · Construction</span>
           <h3>New Fire School Building</h3>
-          <p>BAPCO Energies · BHD 481K (~USD 1.3M). Lump-sum project controls, budget vs actual dashboards, IPC billing and procurement tracking.</p>
-          <div class="chips"><span class="chip">Lump Sum</span><span class="chip">Budget vs Actual</span><span class="chip">Procurement</span></div>
-          <span class="card-link">Read case study →</span>
+          <p>BAPCO Energies · ~USD 1.3M — lump-sum controls, budget vs actual, IPC billing and procurement.</p>
+          <span class="p-go">Read case study →</span>
         </a>
-        <a href="case-gilgit.html" class="card reveal" style="color:inherit;">
-          <span class="meta">Completed · Infrastructure</span>
-          <h3>Gilgit–Shandoor Road, Package III</h3>
-          <p>NLC Pakistan · Rs. 15,053M. Baseline schedule, delay events, EVM, progress curves and full EOT / prolongation / force-majeure claims.</p>
-          <div class="chips"><span class="chip">EVM</span><span class="chip">Oracle EBS</span><span class="chip">EOT</span></div>
-          <span class="card-link">Read case study →</span>
+        <a href="case-gilgit.html" class="p-tile reveal" data-cat="completed" style="--tile-bg: linear-gradient(140deg, #b45309 0%, #3b1d05 55%, #0a0a0a 100%);">
+          <svg class="p-art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path d="M0 230 L70 150 L120 190 L190 90 L250 160 L300 110 L400 200 V300 H0Z" fill="#fcd34d" opacity=".35"/>
+            <path d="M20 250 C120 245 160 200 210 140 S300 60 380 52" stroke="#fde68a" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M20 255 C130 252 175 215 225 162 S310 90 380 86" stroke="#fbbf24" stroke-width="3" fill="none" stroke-dasharray="8 7" stroke-linecap="round"/>
+          </svg>
+          <span class="p-tag">Completed · Infrastructure</span>
+          <h3>Gilgit–Shandoor Road, Pkg III</h3>
+          <p>NLC Pakistan · Rs. 15,053M — baseline, delay events, EVM curves and full EOT / force-majeure claims.</p>
+          <span class="p-go">Read case study →</span>
         </a>
-        <a href="case-balancework.html" class="card reveal" style="color:inherit;">
-          <span class="meta">Method · Resource Planning</span>
-          <h3>Balance Work Plan &amp; Manhour Model</h3>
-          <p>Manhour calculation, manpower histogram and productivity assumptions to convert remaining scope into a credible, resource-loaded recovery plan.</p>
-          <div class="chips"><span class="chip">Manhours</span><span class="chip">Histogram</span><span class="chip">Productivity</span></div>
-          <span class="card-link">Read case study →</span>
+        <a href="case-balancework.html" class="p-tile reveal" data-cat="method" style="--tile-bg: linear-gradient(140deg, #6d28d9 0%, #24104a 55%, #0a0a0a 100%);">
+          <svg class="p-art" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g fill="#c4b5fd"><rect x="40" y="190" width="30" height="50" rx="4"/><rect x="80" y="160" width="30" height="80" rx="4"/><rect x="120" y="120" width="30" height="120" rx="4"/><rect x="160" y="90" width="30" height="150" rx="4" fill="#ddd6fe"/><rect x="200" y="80" width="30" height="160" rx="4" fill="#ddd6fe"/><rect x="240" y="105" width="30" height="135" rx="4"/><rect x="280" y="140" width="30" height="100" rx="4"/><rect x="320" y="175" width="30" height="65" rx="4"/></g>
+            <path d="M30 70 H370" stroke="#f0abfc" stroke-width="2" stroke-dasharray="7 6"/>
+          </svg>
+          <span class="p-tag">Method · Resource Planning</span>
+          <h3>Balance Work Plan &amp; Manhours</h3>
+          <p>Manhour model, manpower histogram and productivity assumptions behind a credible recovery plan.</p>
+          <span class="p-go">Read case study →</span>
         </a>
       </div>
-      <div style="text-align:center; margin-top:40px;"><a href="projects.html" class="btn-ghost">View all projects</a></div>
+      <p class="p-more">And more delivered work — <a href="projects.html">see all projects</a></p>
     </div>
   </section>
 
@@ -278,6 +298,31 @@
         <span class="eyebrow center">Expertise</span>
         <h2 class="title">Skills &amp; <em>credentials</em></h2>
       </div>
+
+      <div class="tools-block">
+        <h3>Using daily</h3>
+        <div class="tool-grid" data-stagger="0.05">
+          <div class="tool reveal"><div class="tool-logo" style="--c:#c74634">P6</div><b>Primavera P6</b><span>Professional &amp; EPPM</span></div>
+          <div class="tool reveal"><div class="tool-logo dark-text" style="--c:#f2c811">BI</div><b>Power BI</b><span>Dashboards &amp; KPIs</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#217346">X</div><b>Excel</b><span>Power Query · Pivot</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#31752f">MP</div><b>MS Project</b><span>Scheduling</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#b0372b">EBS</div><b>Oracle EBS</b><span>ERP · Cost data</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#d97757">AI</div><b>Claude AI</b><span>Controls workflows</span></div>
+        </div>
+      </div>
+
+      <div class="tools-block">
+        <h3>Credentials &amp; methods</h3>
+        <div class="tool-grid" data-stagger="0.05">
+          <div class="tool reveal"><div class="tool-logo" style="--c:#2563eb">PMP</div><b>PMP®</b><span>PMI · 2024</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#ce1126">RE</div><b>CRPEP Bahrain</b><span>Registered Engineer</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#01411c">PEC</div><b>PEC Pakistan</b><span>Registered · 2019</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#0f172a">EVM</div><b>Earned Value</b><span>SPI · CPI · EAC</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#6d28d9">SCL</div><b>SCL Protocol</b><span>EOT &amp; delay claims</span></div>
+          <div class="tool reveal"><div class="tool-logo" style="--c:#0f9d6c">PTW</div><b>PTW Certified</b><span>Oil &amp; gas safety</span></div>
+        </div>
+      </div>
+
       <div class="grid grid-auto" data-stagger="0.07">
         <div class="skill-group card reveal">
           <h3>Scheduling &amp; Controls</h3>
@@ -393,6 +438,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=mono4"></script>
+  <script src="script.js?v=mono5"></script>
 </body>
 </html>

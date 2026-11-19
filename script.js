@@ -142,4 +142,19 @@
     });
   });
 
+  /* ---- Portfolio filter tabs ---- */
+  var filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var f = btn.dataset.filter;
+      filterBtns.forEach(function (b) { b.classList.toggle('active', b === btn); });
+      document.querySelectorAll('.p-tile[data-cat]').forEach(function (tile) {
+        var show = f === 'all' || tile.dataset.cat === f;
+        tile.classList.toggle('hide', !show);
+        if (show) tile.classList.add('visible');
+      });
+      track('portfolio_filter', { filter: f });
+    });
+  });
+
 })();
